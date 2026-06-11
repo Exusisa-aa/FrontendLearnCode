@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .box {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 1px solid #979393;
+    box-shadow: 2px 2px 2px #979393;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .box .p {
+    padding: 5px;
+  }
+
+  .box .name {
+    padding: 30px;
+    font-size: 40px;
+  }
+
+  .box .box_footer {
+    padding: 16px;
+  }
+
+  .box .box_footer .start {
+    position: absolute;
+    left: 60px;
+    bottom: 15px;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .box .box_footer .end {
+    position: absolute;
+    right: 60px;
+    bottom: 15px;
+    width: 100px;
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <div class="box">
+    <div class="p"><strong>随机点名</strong></div>
+    <div class="name">张三</div>
+    <div class="box_footer">
+      <button class="start">开始</button>
+      <button class="end">结束</button>
+    </div>
+  </div>
+  <script>
+    const name = [
+      '张三', '李四', '王五', '赵六',
+      '陈七', '刘八', '周九', '吴十',
+      '徐芳', '孙浩'
+    ]
+    const start = document.querySelector('.start')
+    const end = document.querySelector('.end')
+    const cn = document.querySelector('.name')
+    let m = 0//数组索引
+    let n = 0//interval返回参数
+
+    start.addEventListener('click', function () {
+      n = setInterval(function () {
+        m++
+        if (m > name.length - 1) {
+          m = 0
+        }
+        cn.innerHTML = name[m]
+        if (name.length === 1) {
+          clearInterval(n)
+          start.disabled = true
+          end.disabled = true
+        }
+      }, 10)
+    })
+
+    end.addEventListener('click', function () {
+      name.splice(m, 1)
+      clearInterval(n)
+    })
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes move {
+      0% {
+        transform: translate(0, 0) rotate(0) scale(1, 1);
+      }
+
+      25% {
+        transform: translate(700px, 0) rotate(360000deg) scale(1.5, 1.5);
+        background-color: skyblue;
+      }
+
+      50% {
+        transform: translate(700px, 500px) rotate(36000000000deg) scale(2.5, 2.5);
+        background-color: red;
+      }
+
+      75% {
+        transform: translate(0, 500px) rotate(360000deg) scale(1.5, 1.5);
+        background-color: greenyellow;
+      }
+
+      100% {
+        transform: translate(0, 0) rotate(0deg) scale(1, 1);
+        background-color: green;
+      }
+    }
+
+    .move {
+      width: 150px;
+      height: 150px;
+      background-color: green;
+      /* 规定动画名称 */
+      /* animation-name: move; */
+      /* 规定动画持续时间 */
+      /* animation-duration: 2s; */
+      /* 规定动画运动曲线 */
+      /* animation-timing-function: linear; */
+      /* 规定动画何时开始 */
+      /* animation-delay: 0.5s; */
+      /* 规定动画播放次数 ，可是数字或infinitate*/
+      /* animation-iteration-count: infinite; */
+      /* 规定动画播放方向，可是normal（默认）或alternate周期逆播放 */
+      /* animation-direction: alternate; */
+      /* 规定结束后状态，forwards为保持结束后状态，backwards(默认)为返回原位 */
+      /* animation-fill-mode: forwards; */
+      /* animation简写 */
+      animation: move 2s linear 0.5s infinite alternate backwards;
+    }
+
+    .move:hover {
+      /* 规定运行running和暂停paused，一般与hover连用 */
+      animation-play-state: pause;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>动画animation的基本使用</h1>
+  <div class="move">
+
+  </div>
+</body>
+
+</html>

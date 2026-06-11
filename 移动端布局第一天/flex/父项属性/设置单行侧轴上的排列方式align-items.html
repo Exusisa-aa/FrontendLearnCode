@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .big {
+    width: 800px;
+    height: 600px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* align-items: flex-start;默认 */
+    /* align-items: flex-end; */
+    align-items: center;
+    /* align-items: stretch;  子盒子无高度时拉伸*/
+  }
+
+  .small {
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+    margin: 5px 10px;
+  }
+</style>
+
+<body>
+  <div class="big">
+    <div class="small">1</div>
+    <div class="small">2</div>
+    <div class="small">3</div>
+    <div class="small">4</div>
+  </div>
+</body>
+
+</html>

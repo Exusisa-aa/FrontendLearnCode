@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function randomColor(flag) {
+      if (flag === true) {
+        let color = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 'a', 'b', 'c', 'd', 'e', 'f']
+        let colors = "#"
+        for (let i = 0; i < 6; i++) {
+          let random = Math.floor(Math.random() * 16)
+          colors += color[random]
+        }
+        document.write(`<h1>${colors}</h1>`)
+      } else if (flag === false) {
+        let colors = 'rgb('
+        for (let i = 0; i < 3; i++) {
+          let random = Math.floor(Math.random() * 256)
+          if (i === 2) {
+            colors += `${random}`
+          } else {
+            colors += `${random},`
+          }
+        }
+        colors += ')'
+        document.write(`<h1>${colors}</h1>`)
+      }
+    }
+    randomColor(true)
+    randomColor(false)
+  </script>
+</body>
+
+</html>

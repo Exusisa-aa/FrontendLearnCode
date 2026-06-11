@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h6 {
+      color: brown;
+    }
+
+    p {
+      font-size: 10px;
+    }
+
+    div {
+      color: black;
+    }
+
+    span {
+      color: pink;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .purple {
+      color: purple
+    }
+
+    .brown {
+      color: brown;
+    }
+
+    .backred {
+      background-color: red;
+    }
+
+    .backgreen {
+      background-color: green;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      font-size: 10px;
+    }
+
+    #color {
+      color: red;
+    }
+
+    * {
+      font-size: 20px;
+    }
+
+    body {
+      font-family: '微软雅黑', '宋体', tahoma, 'Hiragino Sans GB';
+    }
+
+    /* body {
+      font-size: 30px;
+    } */
+
+    h1 {
+      font-size: 30px;
+    }
+
+    .normal {
+      font-weight: normal;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .fourhundreds {
+      font-weight: 400;
+    }
+
+    .sevenhundreds {
+      font-weight: 700;
+    }
+
+    .onehundred {
+      font-weight: 100;
+    }
+
+    .italic {
+      font-style: italic
+    }
+
+    .complex {
+      font: italic 700 20px/10px '微软雅黑'
+    }
+  </style>
+</head>
+
+<body>
+  <h1>css基本语法</h1>
+  <h6> 变个色</h6>
+  <p>把字变小</p>
+  <h1>css书写风格</h1>
+  <p1>
+    属性接着的冒号后面要个空格
+    选择器与大括号之间有个空格
+  </p1>
+  <h1>基础选择器之标签选择器</h1>
+  <div>男</div>
+  <div>男</div>
+  <div>男</div>
+  <span>女</span>
+  <span>女</span>
+  <h1>基础选择器之类选择器</h1>
+  <ul>
+    <li class="red">1</li>
+    <li class="green">2</li>
+    <li class="purple">3</li>
+    <li class="brown">4</li>
+  </ul>
+  <h1>类选择器之多类名</h1>
+  <div class="backred box">红色</div>
+  <div class="backgreen box">绿色</div>
+  <div class="backred box">红色</div>
+  <h1>基础选择器之id选择器</h1>
+  <div id="color">222</div>
+  <!-- <div id="color">333</div>id只能调用一次 -->
+  <h1>通配符选择器</h1>
+  <div>整个html页面都适用,不需要被调用</div>
+  <h1>font-family字体类型</h1>
+  <div>微软雅黑 Microsoft yaHei</div>
+  <div>宋体 tahoma</div>
+  <div>无衬线体 arial</div>
+  <div>青冬黑体 Hiragino Sans GB</div>
+  <h1>font-size字体大小</h1>
+  <p>标题标签单独设置大小</p>
+  <h1>font-weight字体粗细</h1>
+  <div class="nornal">normal</div>
+  <div class="bold">bold</div>
+  <div class="fourhundreds">400</div>
+  <div class="sevenhundreds">700</div>
+  <div class="onehundred">100</div>
+  <h1>font-style字体样式</h1>
+  <div class="italic">italic是斜体不常用</div>
+  <h1>font复合属性运用</h1>
+  <div class="complex">严格遵守style、weight、size/line-height、family属性的顺序,其中必写size和famliy</div>
+</body>
+
+</html>

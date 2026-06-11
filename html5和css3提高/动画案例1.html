@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes dong {
+      0% {
+        width: 1px;
+        height: 1px;
+        opacity: 1;
+      }
+
+      100% {
+        width: 90px;
+        height: 90px;
+        opacity: 0;
+      }
+    }
+
+
+    .dt {
+      width: 700px;
+      height: 700px;
+      background-color: #303330;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .dt img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .bj {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 467px;
+      top: 212px;
+    }
+
+    .bjj {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 467px;
+      top: 570px;
+    }
+
+    .bjjj {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 574px;
+      top: 521px;
+    }
+
+    .bj1 {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: #0090f5;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid #0090f5;
+      border-radius: 50%;
+    }
+
+    .dt .bj div[class*="bjh"] {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1px;
+      height: 1px;
+      border: 3px solid rgb(0, 157, 253);
+      border-radius: 50%;
+      box-shadow: 0 0 2px 2px rgb(0, 157, 253);
+    }
+
+    .dt .bjj div[class*="bjh"] {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1px;
+      height: 1px;
+      border: 3px solid rgb(0, 157, 253);
+      border-radius: 50%;
+      box-shadow: 0 0 2px 2px rgb(0, 157, 253);
+    }
+
+    .dt .bjjj div[class*="bjh"] {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1px;
+      height: 1px;
+      border: 3px solid rgb(0, 157, 253);
+      box-shadow: 0 0 2px 2px rgb(0, 157, 253);
+      border-radius: 50%
+    }
+
+    .bjh1 {
+      animation: dong 1s linear 0s infinite;
+    }
+
+    .bjh2 {
+      animation: dong 1s linear 0.5s infinite;
+    }
+
+    .bjh3 {
+      animation: dong 1s linear 1s infinite;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .box .dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border: 1px solid red;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .box div[class*="outcircle"] {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1px;
+      height: 1px;
+      border: 5px solid red;
+      box-shadow: 0 0 2px 2px red;
+      border-radius: 50%;
+    }
+
+    .outcircle1 {
+      animation: dong 1s linear 0s infinite;
+    }
+
+    .outcircle2 {
+      animation: dong 1s linear 0.5s infinite;
+    }
+
+    .outcircle3 {
+      animation: dong 1s linear 1s infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dt">
+    <img src="media/map.png">
+    <div class="bj">
+      <span class="bj1"></span>
+      <div class="bjh1"></div>
+      <div class="bjh2"></div>
+      <div class="bjh3"></div>
+    </div>
+    <div class="bjj">
+      <span class="bj1"></span>
+      <div class="bjh1"></div>
+      <div class="bjh2"></div>
+      <div class="bjh3"></div>
+    </div>
+    <div class="bjjj">
+      <span class="bj1"></span>
+      <div class="bjh1"></div>
+      <div class="bjh2"></div>
+      <div class="bjh3"></div>
+    </div>
+    <div class="box">
+      <span class="dot"></span>
+      <div class="outcircle1"></div>
+      <div class="outcircle2"></div>
+      <div class="outcircle3"></div>
+    </div>
+  </div>
+</body>
+
+</html>

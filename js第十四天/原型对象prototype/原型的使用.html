@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    console.log(Person.prototype)
+    Person.prototype.sing = function () {
+      console.log(this.name + '在唱歌')
+    }
+    //this 指向调用对象
+    //构造函数的属性定义在构造函数中，构造函数的方法挂在构造函数的prototype原型对象上，方法共用且避免浪费内存
+
+
+    const cmh = new Person('cmh', 22)
+    const zhm = new Person('zhm', 20)
+    console.log(cmh.sing())
+    console.log(zhm.sing())
+  </script>
+</body>
+
+</html>

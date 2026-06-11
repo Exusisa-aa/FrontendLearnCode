@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "name": "test_utils",
+  "version": "1.0.0",
+  "description": "测试用",
+  "main": "index.js",
+  "author": "chen",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "dayjs": "^1.11.18"
+  }
+}

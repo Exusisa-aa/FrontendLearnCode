@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .a {
+      height: 200px;
+      width: 200px;
+      border-width: 5px;
+      border-style: double;
+      border-color: green;
+    }
+
+    .b {
+      height: 200px;
+      width: 200px;
+      border-width: 5px;
+      border-style: dotted;
+      border-color: green;
+    }
+
+    .c {
+      height: 200px;
+      width: 200px;
+      border-width: 5px;
+      border-style: dashed;
+      border-color: green;
+    }
+
+    .d {
+      height: 200px;
+      width: 200px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: green;
+    }
+
+    .e {
+      width: 500px;
+      height: 250px;
+    }
+
+    .e tr th,
+    .e tr td {
+      border: 2px solid orangered;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .e tr th {
+      height: 35px;
+    }
+
+    .f {
+      width: 180px;
+      height: 180px;
+      border: 10px solid blue;
+    }
+
+    .g {
+      border: 5px double red;
+      width: 190px;
+      height: 190px;
+      padding-left: 40px;
+      padding-top: 30px;
+    }
+
+    .h {
+      width: 150px;
+      height: 165px;
+      border: 5px dashed blueviolet;
+      padding: 5px 10px 20px 30px;
+    }
+
+    .i {
+      background-color: white;
+      border-top: 3px solid;
+      border-top-color: rgb(227, 137, 55);
+      border-bottom: 5px solid #eaedea;
+      line-height: 41px;
+    }
+
+    .i a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 10px 30px 10px 30px;
+      height: 41px;
+    }
+
+    .i a:link {
+      color: black;
+    }
+
+    .i a:visited {
+      color: black;
+    }
+
+    .i a:hover {
+      background-color: #eaedea;
+      color: orange;
+    }
+
+    .j {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+
+    .k {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      margin: 5px 10px 20px 30px
+    }
+
+    .l {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      background-color: orangered;
+    }
+
+    .m {
+      background-color: blue;
+      width: 400px;
+      height: 400px;
+      margin-top: 60px;
+      overflow: hidden;
+      /*overflow:hidden完美解决塌陷问题*/
+    }
+
+    .n {
+      background-color: pink;
+      width: 200px;
+      height: 200px;
+      margin-top: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>盒子模型的组成</h1>
+  <ul>
+    <Li>border</Li>
+    <Li>content</Li>
+    <Li>padding</Li>
+    <Li>margin</Li>
+  </ul>
+  <h1>盒子模型之border</h1>
+  <div class="a"></div><br />
+  <div class="b"></div><br />
+  <div class="c"></div><br />
+  <div class="d"></div>
+  <h1>表格边框合并</h1>
+  <table class="e" align="center" style="border-collapse: collapse">
+    <thead>
+      <tr>
+        <th>排名</th>
+        <th>关键词</th>
+        <th>趋势</th>
+        <th>今日搜索</th>
+        <th>最近七日</th>
+        <th>相关链接</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>鬼吹灯</td>
+        <td><img src="E:\class\h5＋css3\pink前端基础带资料\基础部分\02-前端基础第二天-HTML5基础\案例\down.jpg" /></td>
+        <td>345</td>
+        <td>123</td>
+        <td><a href="#">贴吧</a>&nbsp;<a href="#">图片</a>&nbsp;<a href="#">百科</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>盗墓笔记</td>
+        <td><img src="E:\class\h5＋css3\pink前端基础带资料\基础部分\02-前端基础第二天-HTML5基础\案例\down.jpg" /></td>
+        <td>124</td>
+        <td>675432</td>
+        <td><a href="#">贴吧</a>&nbsp;<a href="#">图片</a>&nbsp;<a href="#">百科</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>西游记</td>
+        <td><img src="E:\class\h5＋css3\pink前端基础带资料\基础部分\02-前端基础第二天-HTML5基础\案例\up.jpg" /></td>
+        <td>212</td>
+        <td>7654</td>
+        <td><a href="#">贴吧</a>&nbsp;<a href="#">图片</a>&nbsp;<a href="#">百科</a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>东游记</td>
+        <td><img src="E:\class\h5＋css3\pink前端基础带资料\基础部分\02-前端基础第二天-HTML5基础\案例\up.jpg" /></td>
+        <td>23</td>
+        <td>75645</td>
+        <td><a href="#">贴吧</a>&nbsp;<a href="#">图片</a>&nbsp;<a href="#">百科</a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>甄嬛传</td>
+        <td><img src="E:\class\h5＋css3\pink前端基础带资料\基础部分\02-前端基础第二天-HTML5基础\案例\down.jpg" /></td>
+        <td>121</td>
+        <td>7676</td>
+        <td><a href="#">贴吧</a>&nbsp;<a href="#">图片</a>&nbsp;<a href="#">百科</a></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>水浒传</td>
+        <td><img src="E:\class\h5＋css3\pink前端基础带资料\基础部分\02-前端基础第二天-HTML5基础\案例\up.jpg" /></td>
+        <td>576576</td>
+        <td>1231421</td>
+        <td><a href="#">贴吧</a>&nbsp;<a href="#">图片</a>&nbsp;<a href="#">百科</a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>三国演义</td>
+        <td><img src="E:\class\h5＋css3\pink前端基础带资料\基础部分\02-前端基础第二天-HTML5基础\案例\up.jpg" /></td>
+        <td>234</td>
+        <td>7686</td>
+        <td><a href="#">贴吧</a>&nbsp;<a href="#">图片</a>&nbsp;<a href="#">百科</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <h1>设计一个200*200的带边框盒子</h1>
+  <div class="f" style="text-align: center;">边框会增大盒子的大小</div>
+  <h1>盒子模型之padding</h1>
+  <div class="g">123</div>
+  <h1>padding的复合写法</h1>
+  <ul>
+    <li>一个值则上下左右都是这个值</li>
+    <li>两个值则上下为第一个值，左右为第二个值
+    </li>
+    <li>三个值则上为第一个值，左右为第二个值，下为第三个值</li>
+    <li>四个值则安顺时针的顺序赋值</li>
+  </ul>
+  <h1>设计一个200*200并有边框和内边距的盒子</h1>
+  <div class="h">一个盒子</div>
+  <h1>案例</h1>
+  <div class="i">
+    <a href="#">设为首页</a>
+    <a href="#">手机新浪网</a>
+    <a href="#">移动客户端</a>
+    <a href="#">博客</a>
+    <a href="#">微博</a>
+    <a href="#">关注我</a>
+  </div>
+  <h1>盒子模型之margin</h1>
+  <div class="j"></div>
+  <div class="k"></div>
+  <h1>margin的居中对齐</h1>
+  <div class="l"></div>
+  <h1>margin的塌陷问题</h1>
+  <div class="m">
+    <div class="n"></div>
+  </div>
+</body>
+
+</html>

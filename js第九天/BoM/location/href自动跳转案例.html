@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  span {
+    color: red;
+  }
+</style>
+
+<body>
+  <p>等待<span>5</span>秒后自动跳转至页面</p>
+  <script>
+    const span = document.querySelector('span')
+    let n = 5
+    let m = setInterval(function () {
+      n--
+      span.innerHTML = n
+      if (n === 0) {
+        clearInterval(m)
+        // window.location.href = 'https://www.baidu.com'
+        location.href = 'https://www.baidu.com'
+      }
+    }, 1000)
+  </script>
+</body>
+
+</html>

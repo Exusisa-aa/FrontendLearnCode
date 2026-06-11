@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="a"></div>
+  <script>
+    const xhr = new XMLHttpRequest() //创建对象
+    xhr.open('get', 'https://hmajax.itheima.net/api/province')  //启动请求
+    xhr.addEventListener('loadend', function () { //监听请求完成，无论是否成功都要执行方法
+      console.log(xhr.response)
+      const data = JSON.parse(xhr.response) //xhr.response是JSON字符串，需要转换成对象
+      console.log(data.list)
+      document.querySelector('.a').innerHTML = data.list.join('<br>')
+    })
+    xhr.send() //发送请求
+  </script>
+</body>
+
+</html>

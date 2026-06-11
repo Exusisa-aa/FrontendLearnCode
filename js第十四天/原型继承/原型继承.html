@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function People() {
+      this.eyes = 2
+      this.legs = 2
+      this.hands = 2
+      this.head = 1
+    }
+    function Woman(name, age) {
+      this.name = name;
+      this.age = age;
+      this.gender = "女";
+    }
+    function Man(name, age) {
+      this.name = name;
+      this.age = age;
+      this.gender = "男";
+    }
+
+    Woman.prototype = new People()
+    Woman.prototype.constructor = Woman
+
+    Man.prototype = new People()
+    Man.prototype.constructor = Man
+
+    People.prototype.walk = function () {
+      console.log('walk')
+    }
+    Woman.prototype.dance = function () {
+      console.log('dance')
+    }
+    Man.prototype.sing = function () {
+      console.log('sing')
+    }
+    console.log(Woman.prototype)
+    console.log(Man.prototype)
+
+    const xh = new Woman('小红', 18)
+    const xm = new Man('小明', 19)
+    console.log(xh)
+    console.log(xm)
+    xh.dance()
+    xm.sing()
+    xh.walk(), xm.walk()
+  </script>
+</body>
+
+</html>

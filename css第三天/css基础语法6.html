@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul .a {
+      color: red;
+      font-style: italic;
+    }
+
+    ul .a {
+      color: green;
+    }
+
+    .z {
+      color: orangered;
+    }
+
+    .xx {
+      color: blue;
+    }
+
+    .xx .b {
+      color: rgb(74, 105, 26) !important;
+    }
+
+    .gg {
+      color: gold;
+      /* 0,0,1,0 */
+    }
+
+    ul .gg {
+      color: magenta;
+      /* 0,0,1,1 */
+    }
+
+    body ul .gg {
+      color: chocolate;
+      /* 0,0,1,2 */
+    }
+
+
+    .bb {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>css的层叠性</h1>
+  <ul>
+    <li class="a">遵循后来者居上的原则</li>
+    <li class="a">只有相同类型的样式才会被覆盖</li>
+  </ul>
+  <h1>css的继承性</h1>
+  <ul class="z">
+    <li>继承的样式必须是文字类的样式，如font text等</li>
+  </ul>
+  <h1>css的优先级</h1>
+  <ul class="xx">
+    <li style="color: crimson;">继承与*&lt;元素&lt;类选择器与伪类选择器&lt;id选择器&lt;行内样式style&lt;!important</li>
+    <li>继承的权重为0，无论父级标签权重为多少，子标签权重都为0</li>
+    <li>链接标签不吃继承</li>
+    <li>权重的判断从左到右</li>
+    <li class="b">!important最重要</li>
+  </ul>
+  <h1>权重的叠加</h1>
+  <ul>
+    <li class="gg">变色</li>
+  </ul>
+  <h1>继承的权重为0</h1>
+  <ul class="bb">
+    <li>继承为0很重要</li>
+  </ul>
+</body>
+
+</html>

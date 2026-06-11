@@ -1,0 +1,30 @@
+.first {
+  width: 500px;
+  height: 500px;
+}
+.first li {
+  width: 500px;
+  height: 100px;
+  float: left;
+}
+.first li:nth-child(1) {
+  background-color: red;
+}
+.first li:nth-child(1) a:hover {
+  font-size: 60px;
+}
+.first li:nth-child(2) {
+  background-color: green;
+}
+.first li:nth-child(3) {
+  background-color: blue;
+}
+.first li:nth-child(4) {
+  background-color: orangered;
+}
+.first li:nth-child(5) {
+  background-color: black;
+}
+.first li:nth-child(5) a::after {
+  content: "111";
+}

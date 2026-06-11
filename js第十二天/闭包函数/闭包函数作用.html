@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //闭包函数记住被调用次数
+    function outer() {
+      let count = 0;
+      function inner() {
+        count++
+        console.log(count)
+      }
+      return inner;
+    }
+    const fn = outer()
+    //优点：在闭包函数中，在外层函数声明变量，则不是全局变量，也就不会造成变量污染，减少了全局变量的使用，也是防止变量污染带来的数据篡改
+    //缺点：由于返回的函数被一个全局变量记住，该全局变量不会被回收，故外层函数的变量不会被回收，进而造成内存泄漏
+  </script>
+</body>
+
+</html>

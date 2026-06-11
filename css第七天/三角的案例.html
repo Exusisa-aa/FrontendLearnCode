@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @font-face {
+      font-family: 'icomoon';
+      src: url('fonts/icomoon.eot?o8azq8');
+      src: url('fonts/icomoon.eot?o8azq8#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?o8azq8') format('truetype'),
+        url('fonts/icomoon.woff?o8azq8') format('woff'),
+        url('fonts/icomoon.svg?o8azq8#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+    }
+
+    .da .a {
+      float: left;
+      font-family: 'icomoon';
+      font-size: 100px;
+    }
+
+    .da .a a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .da .b {
+      position: relative;
+      float: left;
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      margin-left: 20px;
+      display: none;
+    }
+
+    .da .c {
+      position: absolute;
+      float: left;
+      border: 10px solid transparent;
+      border-right-color: red;
+      top: 40px;
+      left: -20px;
+    }
+
+    .da:hover .b {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="da">
+    <div class="a"><a href="#"></a></div>
+    <div class="b">
+      <div class="c"></div>
+    </div>
+  </div>
+</body>
+
+</html>

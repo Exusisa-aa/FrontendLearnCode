@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box {
+    width: 200px;
+    height: 30px;
+    border: 1px solid red;
+  }
+
+  .box .miaosha {
+    float: left;
+    position: relative;
+    height: 30px;
+    width: 100px;
+    background-color: red;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  .box .miaosha i {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent white transparent transparent;
+    border-style: solid;
+    border-width: 30px 10px 0 0;
+    right: 0;
+    top: 0;
+  }
+
+  .box .yuanjia {
+    text-align: center;
+    line-height: 30px;
+    color: grey;
+    font-size: 14px;
+    text-decoration: line-through;
+  }
+</style>
+
+<body>
+  <div class="box">
+    <div class="miaosha">
+      ¥1650.00
+      <i class="sanjiao"></i>
+    </div>
+    <div class="yuanjia">
+      ¥5088.00
+    </div>
+  </div>
+</body>
+
+</html>

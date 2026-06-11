@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = [1, 2, 3, 4]
+    let [a, b, c, d] = arr
+    console.log(a, b, c, d)
+      ;[a, c, b, d] = [a, b, c, d]
+    console.log(a, b, c, d)
+
+    const pc = ['海尔', '联想', '小米', '方正']
+    let [hr, lx, xm, fz] = pc
+    console.log(hr, lx, xm, fz)
+
+    function getNum() {
+      return [60, 100]
+    }
+    let [min, max] = getNum()
+    console.log(min, max)
+
+
+    //变量少而单元值多，可以用剩余参数解决
+    const [a1, b1, ...arr1] = [1, 2, 3, 4]
+    console.log(a1, b1, arr1)
+
+    //变量多而单元值少，可以用默认参数解决,避免了undefined的出现
+    const [a2 = 0, b2 = 0, c2 = 0, d2 = 0] = [1, 2]
+    console.log(a2, b2, c2, d2)
+
+    //按需求导入
+    const [a3, b3, , d3] = [1, 2, 3, 4]
+    console.log(a3, b3, d3)
+
+    //多维数组的解构
+    const [a4, b4, [c4, d4]] = [1, 2, [3, 4]]
+    console.log(a4, b4, c4, d4)
+  </script>
+</body>
+
+</html>

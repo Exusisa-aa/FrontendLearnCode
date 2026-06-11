@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">
+    123
+  </div>
+  <div class="box1">
+    123
+  </div>
+  <script>
+    const test1 = document.querySelector(".box")
+    test1.innerText = "456" //只修改文本
+
+    const test2 = document.querySelector(".box1")
+    test2.innerHTML = "<strong>456</strong>" //修改文本和标签
+  </script>
+</body>
+
+</html>

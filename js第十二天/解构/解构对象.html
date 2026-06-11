@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const student = {
+      uname: "张三",
+      uage: 18
+    }
+    const { uname, uage } = student
+    console.log(uname, uage)
+
+    //对象解构的更名
+    const { uname: name, uage: age } = student
+    console.log(name, age)
+
+    //对象数组的解构
+    const students = [
+      { uname: "张三", uage: 18 },
+      { uname: "李四", uage: 19 },
+      { uname: "王五", uage: 20 }
+    ]
+    const [{ uname: userName1, uage: userAge1 }, { uname: userName2, uage: userAge2 }, { uname: userName3, uage: userAge3 }] = students
+    console.log(userName1, userAge1, userName2, userAge2, userName3, userAge3)
+
+    //多级对象的解构
+    const person = {
+      uname: "张三",
+      family: {
+        father: "李四",
+        mother: "王五",
+        sister: "赵六"
+      },
+      uage: 18
+    }
+    const { uname: n, family: { father: f, mother: m, sister: s }, uage: a } = person
+    console.log(n, f, m, s, a)
+    const { family } = person
+    console.log(family)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .k {
+      width: 200px;
+      height: 200px;
+      background: red;
+      display: block;
+    }
+
+    .l {
+      display: inline
+    }
+
+    .j {
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      background: green;
+    }
+
+    .xxx {
+      background-color: pink;
+      height: 100px;
+      width: 100px;
+    }
+
+    .cc {
+      height: 400px;
+      width: 400px;
+      background-image: url(images/红刀哥.gif);
+      background-repeat: repeat;
+      /*默认 */
+    }
+
+    .aa {
+      height: 400px;
+      width: 400px;
+      background-image: url(images/红刀哥.gif);
+      background-repeat: repeat;
+    }
+
+    .bb {
+      height: 400px;
+      width: 400px;
+      background-image: url(images/红刀哥.gif);
+      background-repeat: no-repeat;
+    }
+
+    .cc {
+      height: 400px;
+      width: 400px;
+      background-image: url(images/红刀哥.gif);
+      background-repeat: repeat-x;
+    }
+
+    .dd {
+      height: 400px;
+      width: 400px;
+      background-image: url(images/红刀哥.gif);
+      background-repeat: repeat-y;
+    }
+
+    .hh {
+      background-image: url(images/红刀哥.gif);
+      width: 500px;
+      height: 500px;
+      background-repeat: no-repeat;
+      background-color: pink;
+      background-position: right top;
+      /* 若只写一个则另一个默认为center */
+    }
+
+    .nn {
+      background-image: url(images/红刀哥.gif);
+      width: 500px;
+      height: 500px;
+      background-repeat: no-repeat;
+      background-color: pink;
+      background-position: 20px 50px;
+    }
+
+    .mm {
+      background-image: url(images/红刀哥.gif);
+      width: 500px;
+      height: 500px;
+      background-repeat: no-repeat;
+      background-color: pink;
+      background-position: 20px center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>元素显示模式的分类</h1>
+  <p>html元素分为块元素与行内元素，如span是行内元素、div是块元素</p>
+  <h1>块元素</h1>
+  <div>块元素独占一行，高宽边距可控制</div>
+  <h1>行内元素</h1>
+  <div>行内元素可多个一行，高宽边距不可控制</div>
+  <h1>行内块元素</h1>
+  <div>行内块元素可多个占一行，高宽边距可控制</div>
+  <h1>元素显示模式的转换</h1>
+  <a href="#" class="k">行内元素转化为块元素</a>
+  <div class="l">块元素转化为行内元素</div>
+  <p>&nbsp;</p>
+  <span class="j">转化为行内块元素</span>
+  <h1>设置背景颜色</h1>
+  <div class="xxx"></div>
+  <h1>设置背景图片</h1>
+  <div class="cc"></div>
+  <h1>设置背景平铺</h1>
+  <div class="aa"></div>
+  <p>&nbsp;</p>
+  <div class="bb"></div>
+  <div class="cc"></div>
+  <div class="dd"></div>
+  <h1>设置背景图片位置</h1>
+  <div class="hh"></div>
+  <div>&nbsp;</div>
+  <div class="nn"></div>
+  <div>&nbsp;</div>
+  <div class="mm"></div>
+
+</body>
+
+</html>

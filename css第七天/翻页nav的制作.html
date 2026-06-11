@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .fynav {
+      text-align: center;
+    }
+
+    .fynav a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background-color: #f5f8f5;
+      border: 1px solid #dddfdc;
+      text-decoration: none;
+      line-height: 36px;
+      text-align: center;
+      color: #000;
+      font-size: 14px;
+    }
+
+    .fynav input {
+      height: 36px;
+      width: 50px;
+      outline: none;
+      border: 1px solid #dddfdc;
+    }
+
+    .fynav button {
+      height: 36px;
+      width: 60px;
+      border: 1px solid #dddfdc;
+      background-color: #f5f8f5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fynav">
+    <a href="#" style="width: 80px;">&lt;&lt;上一页</a>
+    <a href="#">1</a>
+    <a href="#" style="border: none; background-color: #fff;">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#" style="border: none; background-color: #fff;">...</a>
+    <a href="#" style="width: 80px;">&gt;&gt;下一页</a>
+    共10页 到第几
+    <input type="text">
+    页
+    <button>确定</button>
+  </div>
+</body>
+
+</html>

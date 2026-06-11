@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="a"></div><br>
+  <div class="b"></div><br>
+  <div class="c"></div>
+  <script>
+    function myAxios(config) {
+      return new Promise((resovle, reject) => {
+        const xhr = new XMLHttpRequest()
+
+        if (config.params) {
+          const params = new URLSearchParams(config.params)
+          config.url += `?${params.toString()}`
+        }
+
+        xhr.open(config.method || 'get', config.url)
+        xhr.addEventListener("loadend", function () {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resovle(JSON.parse(xhr.response))
+          } else {
+            reject(new Error(xhr.response))
+          }
+        })
+
+        if (config.data) {
+          xhr.setRequestHeader('Content-Type', 'application/json')
+          xhr.send(JSON.stringify(config.data))
+        } else {
+          xhr.send()
+        }
+      })
+    }
+
+    myAxios({
+      url: "https://hmajax.itheima.net/api/province"
+    }).then(result => {
+      document.querySelector(".a").innerHTML = result.list.join("<br/>")
+    }).catch(error => {
+      document.querySelector(".a").innerHTML = error.message
+    })
+
+    myAxios({
+      url: "https://hmajax.itheima.net/api/area",
+      params: {
+        pname: "广东省",
+        cname: "深圳市"
+      }
+    }).then(result => {
+      document.querySelector(".b").innerHTML = result.list.join("<br/>")
+    }).catch(error => {
+      document.querySelector(".b").innerHTML = error.message
+    })
+
+    myAxios({
+      url: "https://hmajax.itheima.net/api/register",
+      method: "post",
+      data: {
+        username: "ahckfkslu",
+        password: "123456"
+      }
+    }).then(result => {
+      document.querySelector(".c").innerHTML = result.message
+    }).catch(error => {
+      document.querySelector(".c").innerHTML = error.message
+    })
+
+
+  </script>
+</body>
+
+</html>

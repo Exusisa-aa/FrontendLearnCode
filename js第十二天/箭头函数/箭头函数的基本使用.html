@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //基本语法
+    const fn1 = (a) => {
+      console.log(a)
+    }
+    fn1(10)
+    //若只有一个参数，可以省略括号
+    const fn2 = a => {
+      console.log(a)
+    }
+    fn2(10)
+    //若只有一个语句，且不需要返回值，可以省略大括号
+    const fn3 = a => console.log(a)
+    fn3(10)
+    //若只有一个语句，且需要返回值，可以省略return
+    const fn4 = (a, b) => a + b
+    console.log(fn4(10, 10))
+    //若想返回对象，可以使用小括号包裹大括号,相当于有参构造器
+    const addStudents = (uname, uage) => ({ name: uname, age: uage })
+    let students = new Array()
+    students.push(addStudents('张三', 18))
+    students.push(addStudents('李四', 19))
+    students.push(addStudents('王五', 20))
+    console.log(students)
+  </script>
+</body>
+
+</html>

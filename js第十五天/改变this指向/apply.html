@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const person = {
+      name: '张三',
+      age: 18
+    }
+    function fn(a, b) {
+      console.log(this)
+      console.log(a, b)
+    }
+
+    fn.apply(person, [1, 2])//this指向的对象，形参(必须为数组的形参)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .box {
+    width: 400px;
+    height: 150px;
+    background-color: red;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .p {
+    display: block;
+    transform: translateY(65px);
+  }
+
+  .x {
+    color: white;
+    background-color: black;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <div class="box">
+    <div class="p">这是广告</div>
+    <div class="x">X</div>
+  </div>
+  <script>
+    const ba = document.querySelector('.box')
+    const bx = document.querySelector('.box .x')
+    bx.addEventListener('click', function () {
+      ba.style.display = 'none'
+    })
+  </script>
+</body>
+
+</html>

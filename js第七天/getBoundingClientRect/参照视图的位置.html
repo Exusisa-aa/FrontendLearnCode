@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .test {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin-left: 300px;
+    margin-top: 300px;
+  }
+
+  body {
+    height: 3000px;
+  }
+</style>
+
+<body>
+  <div class="test"></div>
+  <script>
+    const test = document.querySelector('.test')
+    console.log(test.getBoundingClientRect())
+  </script>
+</body>
+
+</html>

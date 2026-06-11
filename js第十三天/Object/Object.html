@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=s, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(name, age, gender) {
+      this.name = name
+      this.age = age
+      this.gender = gender
+    }
+
+    const student = new Person('张三', 18, '男')
+
+    const arr1 = Object.keys(student)
+    arr1.forEach(ele => console.log(ele))
+
+    const arr2 = Object.values(student)
+    arr2.forEach(ele => console.log(ele))
+
+    //拷贝
+    const student1 = {}
+    Object.assign(student1, student)
+    console.log(student1)
+
+    //拷贝方法一般用来赋值
+    Object.assign(student, { eyes: 1 })
+    console.log(student)
+  </script>
+</body>
+
+</html>

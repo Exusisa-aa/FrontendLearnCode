@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //生命周期为删除之前，或别的网域
+    localStorage.setItem('uName', '张三') //若无则添加
+
+    document.write(localStorage.getItem('uName'))
+    document.write(localStorage.getItem('userAge')) //只返回字符串
+
+    localStorage.removeItem('userAge')
+
+    localStorage.clear()
+  </script>
+</body>
+
+</html>

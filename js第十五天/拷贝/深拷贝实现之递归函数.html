@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function deepClone(newObj, oldObj) {//先数组 后对象
+      debugger
+      for (let k in oldObj) {
+        if (oldObj[k] instanceof Array) {
+          newObj[k] = []
+          deepClone(newObj[k], oldObj[k])
+        } else if (oldObj[k] instanceof Object) {
+          newObj[k] = {}
+          deepClone(newObj[k], oldObj[k])
+        } else {
+          newObj[k] = oldObj[k]
+        }
+      }
+    }
+    const person = {
+      name: '张三',
+      age: 18,
+      address: {
+        city: '北京'
+      },
+      hobbies: ['吃饭', '睡觉', '打豆豆'],
+      friends: [
+        {
+          name: '李四',
+          age: 20
+        },
+        {
+          name: '王五',
+          age: 22
+        }
+      ]
+    }
+    const monster = {}
+    deepClone(monster, person)
+    console.log(person)
+    monster.address.city = '上海'
+    console.log(monster)
+  </script>
+</body>
+
+</html>

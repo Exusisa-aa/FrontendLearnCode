@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .a {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .b {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      transition: all 0.5s;
+    }
+
+    .b:hover {
+      box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+      transform: translate(0, -20px)
+    }
+
+    .bbox {
+      width: 500px;
+      height: 500px;
+      background-color: red;
+      position: relative;
+    }
+
+    .sbox {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .rotate {
+      width: 300px;
+      height: 300px;
+      background-color: green;
+      transition: all 10s;
+    }
+
+    .rotate:hover {
+      transform: rotate(3600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000deg);
+      background-color: red;
+      box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+      border: 3px solid black;
+    }
+
+    .select {
+      position: relative;
+      width: 300px;
+      height: 50px;
+      border: 3px solid black;
+      transition: all 0.5s;
+    }
+
+    .select::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-right: 3px solid black;
+      border-bottom: 3px solid black;
+      transform: rotate(45deg);
+      right: 15px;
+      top: 15px;
+      transition: all 0.5s;
+    }
+
+    .select:hover {
+      height: 500px;
+    }
+
+    .select:hover::after {
+      transform: rotate(225deg);
+    }
+
+    .origin {
+      width: 300px;
+      height: 300px;
+      background-color: green;
+      transition: all 10s;
+      transform-origin: 100% 100%
+    }
+
+    .origin:hover {
+      background-color: red;
+      box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+      border: 3px solid black;
+      transform: rotate(360000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000deg)
+    }
+
+    .t1 {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: greenyellow;
+      overflow: hidden;
+    }
+
+    .t1::after {
+      content: "sb";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      transform-origin: 0 100%;
+      transform: rotate(90deg);
+      transition: all 0.5s;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    .t1:hover::after {
+      transform: rotate(0deg);
+    }
+
+    .scale,
+    .scale1 {
+      width: 200px;
+      height: 200px;
+      background-color: green;
+      transition: all 0.5s;
+    }
+
+    .scale:hover {
+      transform: scale(1.5, 1.5);
+      background-color: red;
+      box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .scale1:hover {
+      transform: scale(0.5, 0.5);
+      background-color: red;
+      box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .fy {
+      width: 550px;
+      height: 100px;
+      border: 2px solid black;
+      line-height: 100px;
+    }
+
+    .fy .number {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border: 1px solid green;
+      border-radius: 100%;
+      margin-left: 20px;
+      text-align: center;
+      line-height: 50px;
+      transition: all 0.5s;
+    }
+
+    .fy .number:hover {
+      transform: scale(1.2, 1.2);
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .zh {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      transition: all 2s;
+    }
+
+    .zh:hover {
+      background-color: red;
+      box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+      border: 3px solid black;
+      transform: translate(750px, 0px) rotate(36000000000000000000000deg) scale(3, 3);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>transform2D转换之translate移动</h1>
+  <div class="a"></div>
+  <div class="b"></div>
+  <h1>transform2D转换之translate移动来实现垂直居中</h1>
+  <div class="bbox">
+    <div class="sbox"></div>
+  </div>
+  <h1>transform2D转换之rotate旋转</h1>
+  <div class="rotate"></div>
+  <h1>transform2D转换之rotate旋转案例</h1>
+  <div class="select">
+  </div>
+  <h1>transform2D转换之rotate旋转transform-origin中心点案例</h1>
+  <div class="origin"></div>
+  <div style="margin-top: 300px;" class="t1">
+
+  </div>
+  <h1>transform2D转换之scale缩放</h1>
+  <div class="scale">默认中心点缩放可更改，不影响其他盒子的大小</div>
+  <div class="scale1"></div>
+  <div class="fy" style="margin-top: 20px;">
+    <a href="#"><span class="number">1</span></a>
+    <a href="#"><span class="number">2</span></a>
+    <a href="#"><span class="number">3</span></a>
+    <a href="#"><span class="number">4</span></a>
+    <a href="#"><span class="number">5</span></a>
+    <a href="#"><span class="number">6</span></a>
+    <a href="#"><span class="number">7</span></a>
+  </div>
+  <h1>2D转换综合写法</h1>
+  <div class="zh"></div>
+  <h1></h1>
+  <div class=""></div>
+</body>
+
+</html>

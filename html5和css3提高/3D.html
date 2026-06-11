@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .pic {
+      perspective: 400px;
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+    }
+
+
+    .pic img {
+      width: 400px;
+      height: 400px;
+      transition: all 2s;
+    }
+
+    .pic img:hover {
+      transform: translate3d(0, 0, 100px) rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+    }
+
+    .box {
+      perspective: 300px;
+      transform-style: preserve-3d;
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      transition: all 1s;
+    }
+
+    .box .n1 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: red;
+
+    }
+
+    .box .n2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: skyblue;
+      transform: rotateX(60deg);
+    }
+
+    .box .n3 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: green;
+      transform: rotateX(80deg);
+    }
+
+    .box:hover {
+      transform: rotateY(90deg) rotateZ(10deg);
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pic">
+    <img src="media/草原.jpg">
+  </div>
+  <h1>transform-style:preserve-3d;</h1>
+  <div class="box">
+    <div class="n1"></div>
+    <div class="n2"></div>
+    <div class="n3"></div>
+  </div>
+</body>
+
+</html>

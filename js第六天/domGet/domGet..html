@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="22">
+    333
+  </p>
+  <div class="box">
+    123
+  </div>
+  <ul>
+    <li>test1</li>
+    <li>test2</li>
+    <li>test3</li>
+  </ul>
+  <script>
+    const test1 = document.querySelector(".box")
+    test1.style.display = "block"
+    test1.style.color = "red"
+
+    const test2 = document.querySelectorAll("ul li")
+    for (let i = 0; i < test2.length; i++) {
+      test2[i].style.color = "green"
+    }
+
+    const test4 = document.querySelector("ul li:first-child")
+    test4.style.color = "purple"
+
+    const test3 = document.getElementById("22")
+    test3.style.display = "inline-block"
+    test3.style.color = "blue"
+  </script>
+</body>
+
+</html>

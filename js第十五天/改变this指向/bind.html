@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>发送</button>
+  <script>
+    // const person = {
+    //   name: '张三',
+    //   age: 18
+    // }
+    // function fn(a, b) {
+    //   console.log(this)
+    //   console.log(a, b)
+    // }
+    // const f = fn.bind(person, 1, 2)
+    // f()
+
+    document.querySelector('button').addEventListener('click', function () {
+      this.disabled = true
+      setTimeout(function () {
+        this.disabled = false
+      }.bind(document.querySelector('button')), 2000)
+    })
+
+    // document.querySelector('button').addEventListener('click', function () {
+    //   this.disabled = true
+    //   setTimeout(() => this.disabled = false, 2000)
+    // })
+  </script>
+</body>
+
+</html>

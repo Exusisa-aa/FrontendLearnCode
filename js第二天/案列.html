@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    let num = 0
+    let flag = true
+
+    while (flag) {
+      let im = Number(prompt(`请选择您的操作：
+                    1.存钱
+                    2.取钱
+                    3.查看余额
+                    4.退出`))
+      switch (im) {
+        case 1:
+          num += Number(prompt('请输入金额'))
+          break
+        case 2:
+          num -= Number(prompt('请输入金额'))
+          break
+        case 3:
+          alert(`您的余额为${num}`)
+          break
+        case 4:
+          alert('退出成功')
+          flag = false
+          break
+        default:
+          alert('请重新选择')
+          break
+      }
+    }
+
+  </script>
+</body>
+
+</html>

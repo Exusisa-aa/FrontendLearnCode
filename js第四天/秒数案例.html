@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let s = Number(prompt('请输入秒数'));
+    (function fn(s) {
+      let d = parseInt(s / 60 / 60 / 24)
+      let h = parseInt(s / 60 / 60 % 24)
+      let m = parseInt(s / 60 % 60)
+      let s1 = parseInt(s % 60)
+
+      document.write(`<h1>${d}天`)
+      if (h < 10) {
+        document.write(`0${h}小时`)
+      } else {
+        document.write(`${h}小时`)
+      }
+      if (m < 10) {
+        document.write(`0${m}分钟`)
+      } else {
+        document.write(`${m}分钟`)
+      }
+      if (s1 < 10) {
+        document.write(`0${s1}秒</h1>`)
+      } else {
+        document.write(`${s1}秒</h1>`)
+      }
+    })(s);
+  </script>
+</body>
+
+</html>

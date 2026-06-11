@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input class="text" type="text" value="值">
+  <input class="password" type="password">
+  <input class="checkbox" type="checkbox">
+  <button>发送</button>
+
+  <script>
+    const ct = document.querySelector(".text")
+    const cc = document.querySelector(".checkbox")
+    const cb = document.querySelector("button")
+
+    ct.value = "24455555" //修改值不是innerHTML
+    ct.type = "password"
+
+    cc.checked = true
+    cc.checked = false
+    cc.checked = true
+
+    cb.disabled = true
+    cb.disabled = false
+    cb.disabled = true
+  </script>
+</body>
+
+</html>

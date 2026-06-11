@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .clock {
+    width: 200px;
+    height: 250px;
+    background-color: rgb(194, 5, 5);
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .name {
+    font-size: 30px;
+    color: white;
+    margin-top: 20px;
+  }
+
+
+  .now {
+    font-size: 12px;
+    color: white;
+    padding-top: 10px;
+  }
+
+  .target {
+    margin-top: 120px;
+    color: white;
+  }
+
+  li {
+    position: relative;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 20px 5px;
+  }
+
+  li a {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    left: 1px;
+    top: -1px;
+  }
+
+  ul .point {
+    top: -2px;
+    width: 4px;
+  }
+
+  ul {
+    margin-top: 20px;
+  }
+
+  li:nth-child(1) {
+    background-color: black;
+  }
+
+  li:nth-child(3) {
+    background-color: black;
+  }
+
+  li:nth-child(5) {
+    background-color: black;
+  }
+</style>
+
+<body>
+  <div class="clock">
+    <div class="now"></div>
+    <p class="name">睡觉倒计时</p>
+    <ul>
+      <li><a href="#" data-name="hour">00</a></li>
+      <li class="point"><a href="#">:</a></li>
+      <li><a href="#" data-name="minute">00</a></li>
+      <li class="point"><a href="#">:</a></li>
+      <li><a href="#" data-name="second">00</a></li>
+    </ul>
+    <p class="target">23:00:00睡觉</p>
+  </div>
+  <script>
+    function fn() {
+      const date = new Date()
+      const y = date.getFullYear()
+      const m = date.getMonth() + 1
+      const d = date.getDate()
+
+      document.querySelector('.now').innerHTML = `今天是${y}年${m}月${d}日`
+
+      const dateEnd = new Date(`${y}-${m}-${d} 23:00:00`)
+      const dateStart = new Date()
+
+      const time = dateEnd - dateStart
+      let hh = Math.floor(time / 1000 / 60 / 60)
+      let mm = Math.floor(time / 1000 / 60 % 60)
+      let ss = Math.floor(time / 1000 % 60)
+
+      if (hh < 10) {
+        hh = '0' + hh
+      }
+      if (mm < 10) {
+        mm = '0' + mm
+      }
+      if (ss < 10) {
+        ss = '0' + ss
+      }
+
+      document.querySelector('[data-name = hour]').innerHTML = hh
+      document.querySelector('[data-name = minute]').innerHTML = mm
+      document.querySelector('[data-name = second]').innerHTML = ss
+
+      const r1 = Math.floor(Math.random() * 256)
+      const r2 = Math.floor(Math.random() * 256)
+      const r3 = Math.floor(Math.random() * 256)
+      document.querySelector('.clock').style.backgroundColor = `rgb(${r1},${r2},${r3})`
+
+    }
+    let i = setInterval(fn, 1000)
+    if (new Date().getHours() >= 23) {
+      clearInterval(i)
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+/* 媒体查询，适配移动端的方案，该方案大体为rem+媒体查询 */
+/* 屏幕大于320px时的方案 */
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 21.33333333px;
+  }
+}
+
+/* 屏幕大于360px时的方案 */
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+/* 屏幕大于384px时的方案 */
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 25px;
+  }
+}
+
+/* 屏幕大于384px时的方案 */
+@media screen and (min-width: 384px) {
+  html {
+    font-size: 25.6px;
+  }
+}
+
+/* 屏幕大于400px时的方案 */
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 26.66666667px;
+  }
+}
+
+/* 屏幕大于414px时的方案 */
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 27.6px;
+  }
+
+
+}
+
+/* 屏幕大于424px时的方案 */
+@media screen and (min-width: 424px) {
+  html {
+    font-size: 28.26666667px;
+  }
+}
+
+/* 分界线，在页面小时显示两行数据 */
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 32px;
+  }
+}
+
+/* 分界线，在页面小时显示两行数据 */
+@media screen and (min-width: 540px) {
+  html {
+    font-size: 36px;
+  }
+
+  /* 三行 */
+  .week-weather-box {
+    height: 13.64rem !important;
+    width: 17.78rem !important;
+  }
+
+  .week-wrap .item {
+    width: 3.5rem !important;
+  }
+
+  .week-wrap {
+    height: 11.5rem !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* 屏幕宽度大于540px时的方案 */
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 48px;
+  }
+
+
+}
+
+/* 屏幕宽度大于750px时的方案 */
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 50px;
+  }
+}
+
+/* 屏幕宽度大于1600px时的方案 */
+/* 两行 */
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 60px;
+  }
+
+  .week-weather-box {
+    height: 7.64rem !important;
+    width: 20.78rem !important;
+  }
+
+  .week-wrap .item {
+    width: 3rem !important;
+  }
+
+  .week-wrap {
+    height: 11.5rem !important;
+    flex-wrap: nowrap !important;
+  }
+}
+
+/* 整体 */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #0080ff;
+}
+
+.container {
+  width: 24rem;
+  margin: 0 auto;
+  height: 100%;
+}
+
+/* 顶部 */
+.top-box {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+/* 日期 */
+.top-box .title .data {
+  color: white;
+  margin-right: .4rem;
+}
+
+/* 农历 */
+.top-box .title .calendar {
+  opacity: .72;
+}
+
+/* 搜索区域 */
+.search-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-box .location {
+  display: flex;
+  align-items: center;
+  margin-right: .4rem;
+  font-size: .32rem;
+}
+
+.search-box .location img {
+  width: .4rem;
+  height: .4rem;
+  margin-right: .142rem;
+}
+
+.search-box .search-city {
+  width: 4.68rem;
+  height: .64rem;
+  border: none;
+  border-radius: .32rem;
+  padding-left: .2rem;
+  background-color: rgba(255, 255, 255, .2);
+  color: white;
+  font-size: .28rem;
+}
+
+.search {
+  position: relative;
+}
+
+/* 搜索列表 */
+.search-list {
+  width: 100%;
+  overflow-y: scroll;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: .8rem;
+  border: 0.02rem solid rgb(0, 0, 0);
+  display: none;
+  cursor: pointer;
+}
+
+.search-list.show {
+  display: block;
+}
+
+.search-list::-webkit-scrollbar {
+  display: none;
+}
+
+.search-list li {
+  color: black;
+  font-size: .28rem;
+  padding: .3rem .2rem;
+}
+
+.search-list li:hover {
+  background-color: lightgray;
+}
+
+/* 当前天气 */
+.weather-box {
+  display: flex;
+  padding-left: 1rem;
+  align-items: flex-end;
+}
+
+.weather-box .tem-box {
+  margin-right: .84rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-box .tem-box .temp span {
+  font-size: 1.8rem;
+  display: inline-block;
+  height: 2rem;
+  margin-bottom: .2rem;
+  line-height: 2rem;
+}
+
+.climate-box .air {
+  display: inline;
+  padding: .1rem .2rem;
+  height: .64rem;
+  border-radius: .32rem;
+  background: #65D45A;
+  text-align: center;
+  line-height: .64rem;
+  font-family: PingFangSC-Medium;
+  font-size: .36rem;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.climate-box .weather-list {
+  display: flex;
+  align-items: flex-end;
+  margin-top: .42rem;
+  margin-bottom: .56rem;
+}
+
+.climate-box .weather-list li img {
+  width: .4rem;
+  height: .4rem;
+}
+
+.climate-box .weather-list li {
+  margin-right: .4rem;
+}
+
+.climate-box .weather-list li,
+.climate-box .weather-list span {
+  display: flex;
+  align-items: center;
+  font-size: .32rem;
+}
+
+/* 今日详细天气 */
+.today-weather {
+  display: flex;
+  padding-left: 1rem;
+}
+
+.today-weather .range-box,
+.today-weather .range {
+  font-size: .32rem;
+}
+
+.today-weather .sun-list {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.today-weather .sun-list li {
+  font-size: .32rem;
+  margin-right: .84rem;
+}
+
+/* 周天气预报 */
+.week-weather-box {
+  height: 17.64rem;
+  border-radius: .2rem;
+  background-color: #fff;
+  width: 17.78rem;
+  margin: .6rem auto;
+  padding: .6rem;
+}
+
+.week-weather-box .title {
+  font-size: .4rem;
+  color: #3A475A;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+/* 列表 */
+.week-wrap {
+  display: flex;
+  margin: 0 auto;
+  margin-top: .6rem;
+  height: 11.5rem;
+  flex-wrap: wrap;
+}
+
+.week-wrap .item {
+  margin-left: .4rem;
+  width: 5rem;
+  height: 5.08rem;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: .6rem;
+}
+
+.week-wrap .item:hover {
+  background: #F7FAFF;
+  border-radius: .2rem;
+}
+
+.week-wrap .item span {
+  color: #393F48;
+}
+
+.week-wrap .item .date-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: .08rem;
+}
+
+.week-wrap .item .date-box .dateFormat {
+  font-size: .32rem;
+  color: #393F48;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.week-wrap .item .date-box .date {
+  font-size: .32rem;
+  color: #88909D;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.week-wrap .item img {
+  width: .92rem;
+  height: .92rem;
+  margin: .24rem 0 .24rem;
+}
+
+.week-wrap .item .weather {
+  font-size: .32rem;
+  color: #393F48;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: .08rem;
+}
+
+.week-wrap .item .temp {
+  font-size: .28rem;
+  color: #393F48;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: .2rem;
+}
+
+.week-wrap .item .wind span {
+  font-size: .28rem;
+  color: #676C74;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: 400;
+}

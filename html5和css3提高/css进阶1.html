@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    @font-face {
+      font-family: 'icomoon';
+      src: url('fonts/icomoon.eot?bv34ni');
+      src: url('fonts/icomoon.eot?bv34ni#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?bv34ni') format('truetype'),
+        url('fonts/icomoon.woff?bv34ni') format('woff'),
+        url('fonts/icomoon.svg?bv34ni#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+    }
+
+    span[class] {
+      color: red;
+    }
+
+    div[class="on"] {
+      color: yellowgreen;
+    }
+
+    div[class^="b"] {
+      color: green;
+    }
+
+    div[class$="m"] {
+      color: skyblue;
+    }
+
+    div[class*="ion"] {
+      font-weight: 700;
+    }
+
+    .jgwl1 li:first-child {
+      color: red;
+    }
+
+    .jgwl1 li:last-child {
+      color: pink;
+    }
+
+    .jgwl1 li:nth-child(2) {
+      color: skyblue;
+    }
+
+    .jgwl2 li:first-of-type {
+      color: red;
+    }
+
+    .jgwl2 div:last-of-type {
+      color: pink;
+    }
+
+    .jgwl2 span:nth-of-type(1) {
+      color: skyblue;
+    }
+
+    .even li:nth-child(even) {
+      color: red;
+    }
+
+    .odd li:nth-child(odd) {
+      color: red;
+    }
+
+    .n li:nth-child(n+3) {
+      color: red;
+    }
+
+    .box {
+      width: 300px;
+      height: 200px;
+      background-color: greenyellow;
+      line-height: 200px;
+      text-align: center;
+    }
+
+    .box::before {
+      content: "你";
+      float: left;
+      background-color: red;
+    }
+
+    .box::after {
+      content: "sb";
+      float: right;
+      background-color: red;
+    }
+
+    .select {
+      width: 250px;
+      height: 40px;
+      border: 1px solid grey;
+      position: relative;
+    }
+
+    .select::after {
+      font-family: 'icomoon';
+      content: '';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      margin-top: -12px;
+      color: black;
+      font-size: 26px;
+    }
+
+    .pic1 {
+      position: relative;
+      width: 500px;
+      height: 300px;
+      margin: 0 auto;
+    }
+
+    .pic1 img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .pic1::before {
+      content: "";
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.3);
+      background-image: url(media/arr.png);
+      background-repeat: no-repeat;
+      background-position: 233px 133px;
+      width: 500px;
+      height: 300px;
+      display: none;
+    }
+
+    .pic1:hover::before {
+      display: block;
+    }
+
+    .bsc {
+      width: 100px;
+      height: 100px;
+      border: 20px solid red;
+      background-color: greenyellow;
+      padding: 30px;
+      box-sizing: content-box;
+    }
+
+    .bsb {
+      width: 100px;
+      height: 100px;
+      border: 20px solid red;
+      background-color: greenyellow;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .pic2 img {
+      filter: blur(30px);
+    }
+
+    .pic2 img:hover {
+      filter: blur(0px);
+    }
+
+    .box1 {
+      width: 200px;
+      height: 400px;
+      background-color: red;
+      overflow: hidden;
+    }
+
+    .box2 {
+      width: calc(100% - 20px);
+      height: 200px;
+      margin: 0 auto;
+      margin-top: 10px;
+      background-color: greenyellow;
+      box-sizing: border-box;
+    }
+
+    .dh {
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      transition: all 0.5s ease 0s;
+      /*transiton:all 0.5s*/
+    }
+
+    .dh:hover {
+      width: 500px;
+      height: 500px;
+      background-color: skyblue;
+      box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+      border: 2px solid red;
+    }
+
+    .jdt {
+      width: 500px;
+      height: 20px;
+      border: 3px solid red;
+      border-radius: 15px;
+    }
+
+    .jdt .a {
+      width: 20px;
+      height: 18px;
+      border-radius: 15px;
+      transition: all 2s;
+      margin: 1px;
+      background-color: red;
+    }
+
+    .jdt:hover .a {
+      width: 498px;
+      background-color: green;
+    }
+
+    .sbox {
+      position: relative;
+      width: 329px;
+      height: 337px;
+      transition: all 1s;
+      overflow: hidden;
+    }
+
+    .sbox .logo {
+      position: absolute;
+      transition: all 0.5s;
+      left: 0;
+    }
+
+    .sbox:hover .logo {
+      left: -337px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>属性选择器</h1>
+  <ul>
+    <li><span class="n">E[att]</span>
+      <span class="n">选所有这个标签</span>
+    <li>
+      <div class="on">E[att="1"]</div>
+      <div class="on">选这个标签带有这个属性且值为1</div>
+    </li>
+    <li>
+      <div class="ion">E[att*="1"]</div>
+      <div class="ion">选这个标签带有这个属性且值带有1</div>
+    </li>
+    <li>
+      <div class="ionm">E[att$="1"]</div>
+      <div class="ionm">选这个标签带有这个属性且值的结尾为1</div>
+    </li>
+    <li>
+      <div class="bion">E[att^="1"]</div>
+      <div class="bion">选这个标签带有这个属性且值的开头为1</div>
+    </li>
+    <h1>结构伪类选择器</h1>
+    <ul class="jgwl1">
+      <li>E A:first-child 选元素E里第一个A</li>
+      <li>E A:last-child 选元素E里最后一个A</li>
+      <li>E A:nth-child(n) 选元素E里第n个A</li>
+    </ul>
+    <ul class="jgwl2">
+      <li>E A:first-of-type 选元素E里A类型第一个</li>
+      <div>E A:last-of-type 选元素E里A类型最后一个</div>
+      <span>E A:nth-of-type 选元素E里A类型第n个</span>
+    </ul>
+    <div>区别:E A:nth-child(n)从E里的第一个开始排号E A:nth-of-type是把E里的A全拿出来排号</div>
+
+    <ul class="even">
+      <li>偶间隔变色</li>
+      <li>偶间隔变色</li>
+      <li>偶间隔变色</li>
+      <li>偶间隔变色</li>
+      <li>偶间隔变色</li>
+      <li>偶间隔变色</li>
+    </ul>
+    <br>
+    <ul class="odd">
+      <li>奇间隔变色</li>
+      <li>奇间隔变色</li>
+      <li>奇间隔变色</li>
+      <li>奇间隔变色</li>
+      <li>奇间隔变色</li>
+      <li>奇间隔变色</li>
+    </ul>
+    <br>
+    <ul class="n">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+    </ul>
+    <h1>伪元素选择器</h1>
+    <div class="box">
+      是
+    </div>
+    <h1>伪元素选择器案例1</h1>
+    <div class="select">
+
+    </div>
+    <h1>伪元素选择器案例2</h1>
+    <div class="pic1">
+      <img src="media/tudou.jpg">
+    </div>
+    <h1>box-sizing盒子固化</h1>
+    <div class="bsc"></div>
+    <div class="bsb"></div>
+    <h1>filter图片模糊处理</h1>
+    <div class="pic2">
+      <img src="media/草原.jpg">
+    </div>
+    <h1>calc()函数的设置</h1>
+    <div class="box1">
+      <div class="box2"></div>
+    </div>
+    <h1>外边距塌陷问题</h1>
+    <ul>
+      <li>给父级设置overflow:hidden;</li>
+    </ul>
+    <h1>transition过度动画</h1>
+    <div class="dh"></div>
+    <h1>transition案例1</h1>
+    <div class="jdt" style="box-sizing: content-box;">
+      <div class="a"></div>
+    </div>
+    <h1>transition案例2</h1>
+    <div class="sbox">
+      <img src="media/111.jpg" class="logo">
+    </div>
+</body>
+
+</html>

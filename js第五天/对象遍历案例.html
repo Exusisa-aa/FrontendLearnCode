@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  tr {
+    text-align: center;
+  }
+
+  table {
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+
+  tr:first-child {
+    background-color: rgba(206, 202, 202, 0.7);
+  }
+
+  tr:nth-child(2) {
+    background-color: rgba(152, 149, 149, 0.7);
+  }
+
+  tr:not(:first-child, :nth-child(2)):hover {
+    background-color: rgba(206, 97, 97, 0.7);
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" width="600">
+    <tr>
+      <th colspan="5">学生列表</th>
+    </tr>
+    <tr>
+      <th>序号</th>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+      <th>地址</th>
+    </tr>
+    <script>
+      let person = [
+        { serial: 1, person_name: '张三', age: 18, gender: '男', address: '北京' },
+        { serial: 2, person_name: '李四', age: 19, gender: '男', address: '上海' },
+        { serial: 3, person_name: '王五', age: 20, gender: '男', address: '天津' },
+        { serial: 4, person_name: '老六', age: 21, gender: '女', address: '深圳' },
+        { serial: 5, person_name: '任七', age: 22, gender: '女', address: '香港' }
+      ]
+      for (let i = 0; i < person.length; i++) {
+        document.write(`<tr>`)
+        for (let k in person[i]) {
+          document.write(`<td>${person[i][k]}</td>`)
+        }
+        document.write(`</tr>`)
+      }
+    </script>
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../bs框架/css/bootstrap.min.css">
+</head>
+<style>
+  [class^="col"] {
+    outline: 1px solid red;
+    outline-offset: -1px;
+    /* 避免双边框重叠 */
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="row">
+          <div class="col-6 order-last">1</div>
+          <div class="col-6 order-first">2</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="row">
+          <div class="col-6">3</div>
+          <div class="col-6">4</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="row">
+          <div class="col-6 order-last">5</div>
+          <div class="col-6 order-first">6</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="row">
+          <div class="col-6">7</div>
+          <div class="col-6">8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>年会抽奖</title>
+  <style>
+    .wrapper {
+      width: 840px;
+      height: 420px;
+      background: url(./images/bg01.jpg) no-repeat center / cover;
+      padding: 100px 250px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <strong>传智教育年会抽奖</strong>
+    <h1>一等奖：<span id="one"></span></h1>
+    <h3>二等奖：<span id="two"></span></h3>
+    <h5>三等奖：<span id="three"></span></h5>
+    <script>
+      const names = [
+        '张三',
+        '李四',
+        '王五',
+        '赵六',
+        '孙七',
+        '周八',
+        '吴九',
+        '郑十',
+        '王十一',
+        '赵十二',
+        '孙十三',
+        '周十四',
+        '吴十五',
+        '郑十六',
+        '王十七',
+        '赵十八',
+        '孙十九',
+      ]
+      const random1 = Math.floor(Math.random() * names.length)
+      const name1 = names[random1]
+      names.splice(random1, 1)
+      const random2 = Math.floor(Math.random() * names.length)
+      const name2 = names[random2]
+      names.splice(random2, 1)
+      const random3 = Math.floor(Math.random() * names.length)
+      const name3 = names[random3]
+      names.splice(random3, 1)
+      const c1 = document.querySelector("#one")
+      c1.innerHTML = name1
+      const c2 = document.querySelector("#two")
+      c2.innerHTML = name2
+      const c3 = document.querySelector("#three")
+      c3.innerHTML = name3
+    </script>
+  </div>
+</body>
+
+</html>

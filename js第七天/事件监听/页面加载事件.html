@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.addEventListener('load', function () {
+      const btn = document.querySelector('button')
+      btn.onclick = function () {
+        alert('点击了')
+      }
+    })
+    //当所有的页面元素和DOM对象加载完毕后执行该load事件
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.querySelector('button')
+      btn.onclick = function () {
+        alert('点击了')
+      }
+    })
+    //当所有的DOM对象加载完毕后执行该DOMContentLoaded事件
+
+  </script>
+</head>
+
+<body>
+  <button>点击</button>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="a"></div>
+  <br>
+  <div class="b"></div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    //方案一：拼接url
+    axios({
+      url: "https://hmajax.itheima.net/api/city?pname=河北省"
+    }).then(result => {
+      document.querySelector(".a").innerHTML = result.data.list.join("</br>")
+    })
+    //方案二：使用params
+    axios({
+      url: "https://hmajax.itheima.net/api/city",
+      params: {
+        pname: "广东省"
+      }
+    }).then(result => {
+      document.querySelector(".b").innerHTML = result.data.list.join("</br>")
+    })
+  </script>
+</body>
+
+</html>

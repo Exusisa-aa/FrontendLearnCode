@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    fn()
+    function fn() {
+      console.log("函数提升")
+    }
+
+    //函数表达式不支持函数提升
+    f()
+    var f = function () {
+      console.log("函数提升")
+    }
+  </script>
+</body>
+
+</html>

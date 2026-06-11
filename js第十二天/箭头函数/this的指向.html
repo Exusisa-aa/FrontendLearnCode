@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const fn1 = () => console.log(this)//window
+    fn1()
+
+    const students = {
+      name: '张三',
+      HI: function () {
+        const fn = () => {
+          console.log(this)//向上级作用域搜索可用的this
+        }//students
+        fn()
+      }
+    }
+
+    students.HI()
+  </script>
+</body>
+
+</html>

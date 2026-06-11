@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const p = new Promise((resolve, reject) => {
+      console.log('开始执行')
+      setTimeout(() => {
+        // resolve('success')  表示成功  传字符串success到result
+        // reject(new Error('fail'))  表示失败  传错误对象new Error('fail')到rerror
+      }, 1000)
+    })
+
+    console.log(p)
+    //待定pending 成功fulfilled 失败rejected
+
+    p.then(result => {
+      console.log(result)
+    }).catch(error => {
+      console.log(error)
+    })
+  </script>
+</body>
+
+</html>

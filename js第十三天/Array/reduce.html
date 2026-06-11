@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = [1, 2, 3, 4, 5]
+    const a = arr.reduce(function (pre, cur) {
+      return pre + cur
+    }, 10)
+    console.log(a)
+
+    const array = [{
+      name: '张三',
+      salary: 10000
+    }, {
+      name: '李四',
+      salary: 12000
+    }, {
+      name: '王五',
+      salary: 15000
+    }]
+
+    const sum = array.reduce(function (pre, cur) {
+      return pre + cur.salary
+    }, 0)
+    console.log(sum)
+  </script>
+</body>
+
+</html>

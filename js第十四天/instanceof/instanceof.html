@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    const p = new Person('cmh', 22)
+    console.log(p instanceof Person)
+    console.log(p instanceof Object)
+    console.log(p instanceof Array)
+    console.log([1, 2, 3] instanceof Array)
+  </script>
+</body>
+
+</html>

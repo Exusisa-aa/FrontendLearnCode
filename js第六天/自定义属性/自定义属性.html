@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div data-id="1" data-message="不知道1"></div>
+  <div data-id="2" data-message="不知道2"></div>
+  <div data-id="3" data-message="不知道3"></div>
+  <div data-id="4" data-message="不知道4"></div>
+  <div data-id="5" data-message="不知道5"></div>
+  <script>
+    const test = document.querySelectorAll("div")
+    console.log(test[0].dataset)
+    document.write(test[0].dataset.id)
+    console.log(test[0].dataset.id)
+    console.log(test[0].dataset.message)
+
+    document.write(test[3].dataset.message)
+    console.log(test[4].dataset.message)
+
+    document.write(test[2].dataset.message)
+  </script>
+</body>
+
+</html>

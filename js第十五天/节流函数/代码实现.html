@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: #5c5959;
+    color: white;
+  }
+</style>
+
+<body>
+  <div class="box"></div>
+  <script>
+    let i = 0
+    let timer = undefined
+    document.querySelector('.box').innerHTML = i
+    document.querySelector('.box').addEventListener('mousemove', function () {
+      if (timer === undefined) {
+        timer = setTimeout(function () {
+          i++
+          document.querySelector('.box').innerHTML = i
+          timer = undefined
+        }, 500)
+      }
+    })
+  </script>
+</body>
+
+</html>

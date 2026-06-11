@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul></ul>
+  <script>
+    const li1 = document.createElement('li')
+    const li2 = document.createElement('li')
+    const li3 = document.createElement('li')
+    const li4 = document.createElement('li')
+    const li5 = document.createElement('li')
+    const ul = document.querySelector('ul')
+    ul.appendChild(li1)
+    ul.appendChild(li2)
+    ul.appendChild(li3)
+    li4.innerHTML = '最后'
+    ul.appendChild(li4)
+    li5.innerHTML = '第一'
+    ul.insertBefore(li5, ul.children[0])
+  </script>
+</body>
+
+</html>

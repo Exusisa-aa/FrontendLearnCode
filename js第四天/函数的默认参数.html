@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function getSum(start = 0, end = 0) {
+      let sum = 0
+      for (let i = start; i <= end; i++) {
+        sum += i
+      }
+      return sum
+    }
+
+    function getNum(num = 0) {
+      return num;
+    }
+
+    function getArrSum(arr = []) {
+      let sum = 0
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+      }
+      return sum
+    }
+    // 形参比实参多则会undefined，实参比形参则会忽略多余的实参，无实参则使用默认值
+
+    document.write(getSum(100, 101))
+    document.write("</br>")
+    document.write(getNum())
+    document.write("</br>")
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    document.write(getArrSum(arr))
+  </script>
+</body>
+
+</html>

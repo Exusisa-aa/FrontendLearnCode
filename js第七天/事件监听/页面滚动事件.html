@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .color {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    display: none;
+    float: left;
+    margin-top: 800px;
+    margin-left: 400px;
+  }
+
+  .h {
+    height: 4000px;
+  }
+</style>
+
+<body>
+  <div class="color"></div>
+  <div class="h"></div>
+  <script>
+    document.documentElement.scrollTop = 800
+    window.addEventListener('scroll', function () {
+      const n = document.documentElement.scrollTop
+      if (n >= 300) {
+        document.querySelector('.color').style.display = 'block'
+      } else {
+        document.querySelector('.color').style.display = 'none'
+      }
+    })
+  </script>
+</body>
+
+</html>

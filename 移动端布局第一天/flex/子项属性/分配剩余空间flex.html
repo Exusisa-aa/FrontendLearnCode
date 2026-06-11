@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .big {
+    width: 800px;
+    height: 200px;
+    display: flex;
+    margin: 0 auto;
+    background-color: black;
+  }
+
+  .small {
+    height: 200px;
+  }
+
+  .small:nth-child(1) {
+    background-color: red;
+    flex: 1;
+    /* 800 / (6+1+1) * 1 = 100 */
+  }
+
+  .small:nth-child(3) {
+    background-color: blue;
+    flex: 1;
+    /* 800 / (6+1+1) * 1 = 100 */
+  }
+
+  .small:nth-child(2) {
+    background-color: gold;
+    flex: 6;
+    /* 800 / (6+1+1) * 6 = 600 */
+  }
+</style>
+
+<body>
+  <div class="big">
+    <div class="small"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+  </div>
+</body>
+
+</html>

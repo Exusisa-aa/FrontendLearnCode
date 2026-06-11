@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .test {
+    width: 300px;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 0 auto;
+  }
+</style>
+
+<body>
+  <div class="test"></div>
+  <script>
+    const div = document.querySelector('.test')
+    fn()
+
+    function fn() {
+      const date = new Date()
+      let h = date.getHours()
+      let m = date.getMinutes()
+      let s = date.getSeconds()
+      let y = date.getFullYear()
+      let mon = date.getMonth() + 1
+      let d = date.getDate()
+      if (h < 10) {
+        h = '0' + h
+      }
+      if (m < 10) {
+        m = '0' + m
+      }
+      if (s < 10) {
+        s = '0' + s
+      }
+      div.innerHTML = `${y}年${mon}月${d}日  ${h}时${m}分${s}秒`
+    }
+    setInterval(fn, 1000)
+  </script>
+</body>
+
+</html>

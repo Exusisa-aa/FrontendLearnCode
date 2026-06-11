@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .a {
+      width: 600px;
+      background-color: greenyellow;
+      border: 2px solid orangered;
+    }
+
+    .b {
+      background-color: pink;
+      width: 100px;
+      height: 200px;
+      float: left;
+    }
+
+    .c {
+      background-color: yellow;
+      width: 100px;
+      height: 200px;
+      float: left;
+      margin-left: 50px;
+    }
+
+    .d {
+      width: 800px;
+      height: 200px;
+      background-color: black;
+    }
+
+    .clearfix:after {
+      content: "";
+      height: 0;
+      clear: both;
+      visibility: hidden;
+      display: block;
+    }
+
+    .clearfix {
+      zoom: 1;
+    }
+
+    .e {
+      width: 600px;
+      background-color: greenyellow;
+      border: 2px solid orangered;
+    }
+
+    .f {
+      background-color: pink;
+      width: 100px;
+      height: 200px;
+      float: left;
+    }
+
+    .g {
+      background-color: yellow;
+      width: 100px;
+      height: 200px;
+      float: left;
+      margin-left: 50px;
+    }
+
+    .h {
+      width: 800px;
+      height: 200px;
+      background-color: black;
+    }
+
+    .clearfix1:before,
+    .clearfix1:after {
+      content: "";
+      display: table;
+    }
+
+    .clearfix1:after {
+      clear: both;
+    }
+
+    .clearfix1 {
+      zoom: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>清除浮动之:after法</h1>
+  <div class="a clearfix">
+    <div class="b"></div>
+    <div class="c"></div>
+  </div>
+  <div class="d"></div>
+  <h1>清除浮动之双伪链接法</h1>
+  <div class="e clearfix1">
+    <div class="f"></div>
+    <div class="g"></div>
+  </div>
+  <div class="h"></div>
+</body>
+
+</html>

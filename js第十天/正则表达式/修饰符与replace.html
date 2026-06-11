@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="test">sb</div>
+  <div class="test">SB</div>
+  <div class="test">sB</div>
+  <div class="test">zz</div>
+  <script>
+    const div = document.querySelectorAll('.test')
+    for (let i = 0; i < div.length; i++) {
+      div[i].addEventListener('click', function () {
+        if (/^sb$/ig.test(this.innerHTML)) { //没有g则只替换一个  有g则替换所有
+          this.innerHTML = this.innerHTML.replace(/^sb$/ig, '**')
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>

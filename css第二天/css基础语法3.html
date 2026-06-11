@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul li {
+      color: green;
+    }
+
+    ol li a {
+      color: red;
+    }
+
+    .z li a {
+      color: yellow;
+    }
+
+    .x li {
+      color: purple;
+    }
+
+    div>a {
+      color: coral;
+    }
+
+    .zzz>a {
+      color: aqua;
+    }
+
+    div,
+    p {
+      font-style: italic
+    }
+
+    span,
+    .xxx li {
+      font-family: 宋体;
+    }
+
+    .zx:link {
+      color: black;
+      text-decoration: none;
+    }
+
+    .zx:visited {
+      color: orange;
+    }
+
+    .zx:hover {
+      color: purple;
+    }
+
+    .zx:active {
+      color: chartreuse;
+    }
+
+    .cx:link {
+      color: black;
+      text-decoration: none;
+    }
+
+    .cx:hover {
+      color: orangered;
+      text-decoration: underline;
+    }
+
+    form>input:focus {
+      color: red;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>复合选择器之后代选择器的使用</h1>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <ol class="x">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li><a href="#">4</a></li>
+  </ol>
+  <ol class="z">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">4</a></li>
+  </ol>
+  <h1>复合选择器之子选择器</h1>
+  <div>
+    <a href="#">1</a>
+    <p>
+      <a href="#">2</a>
+    </p>
+  </div>
+  <div class="zzz">
+    <a href="#">1</a>
+    <p>
+      <a href="#">2</a>
+    </p>
+    <a href="#">1</a>
+  </div>
+  <h1>复合选择器之并集选择器的使用</h1>
+  <div>熊大</div>
+  <p>熊二</p>
+  <span>光头强</span>
+  <ul class="xxx">
+    <li>小猪佩奇</li>
+    <li>猪爸</li>
+    <li>猪妈</li>
+  </ul>
+  <h1>复合选择器之链接伪类选择器</h1>
+  <a href="#" class="zx">进入</a>
+  <a href="#" class="zx">进入</a>
+  <a href="#" class="cx">实际开发中一般写法</a>
+  <h1>focus链接伪类选择器的使用</h1>
+  <form action="11.php">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+  </form>
+</body>
+
+</html>

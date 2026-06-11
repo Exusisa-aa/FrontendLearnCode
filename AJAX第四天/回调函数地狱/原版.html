@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>回调地狱</title>
+</head>
+
+<body>
+  <form>
+    <span>省份：</span>
+    <select>
+      <option class="province"></option>
+    </select>
+    <span>城市：</span>
+    <select>
+      <option class="city"></option>
+    </select>
+    <span>地区：</span>
+    <select>
+      <option class="area"></option>
+    </select>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    /**
+     * 目标：演示回调函数地狱
+     * 需求：获取默认第一个省，第一个市，第一个地区并展示在下拉菜单中
+     * 概念：在回调函数中嵌套回调函数，一直嵌套下去就形成了回调函数地狱
+     * 缺点：可读性差，异常无法获取，耦合性严重，牵一发动全身
+    */
+
+
+    let pname = ''
+    let cname = ''
+    let aname = ''
+    const p1 = new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest()
+      xhr.open('get', 'https://hmajax.itheima.net/api/province')
+      xhr.addEventListener('loadend', function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve(JSON.parse(xhr.response))
+        } else {
+          reject(new Error(xhr.response))
+        }
+      })
+      xhr.send()
+    })
+
+    const p2 = p1.then(result => {
+      pname = result.list[0]
+      document.querySelector('.province').innerHTML = pname
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open('get', `https://hmajax.itheima.net/api/city?pname=${pname}`)
+        xhr.addEventListener('loadend', function () {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve(JSON.parse(xhr.response))
+          } else {
+            reject(new Error(xhr.response))
+          }
+        })
+        xhr.send()
+      })
+    }).catch(error => {
+      document.querySelector('.province').innerHTML = error.message
+    })
+
+    const p3 = p2.then(result => {
+      cname = result.list[0]
+      document.querySelector('.city').innerHTML = cname
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open('get', `https://hmajax.itheima.net/api/area?pname=${pname}&cname=${cname}`)
+        xhr.addEventListener('loadend', function () {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve(JSON.parse(xhr.response))
+          } else {
+            reject(new Error(xhr.response))
+          }
+        })
+        xhr.send()
+      })
+    }).catch(error => {
+      document.querySelector('.city').innerHTML = error.message
+    })
+
+    p3.then(result => {
+      aname = result.list[0]
+      document.querySelector('.area').innerHTML = aname
+    }).catch(error => {
+      document.querySelector('.area').innerHTML = error.message
+    })
+
+  </script>
+</body>
+
+</html>

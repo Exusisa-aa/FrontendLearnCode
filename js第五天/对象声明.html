@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let person = {
+      person_name: '陈',
+      age: 18,
+      gender: '男',
+      height: 170
+    }
+    person.person_name = '李'
+    person.hooby = '乒乓球'
+    delete person.hooby
+    document.write(`<h1>${person.person_name}</h1>`)
+    document.write(`<h1>${person.hooby}</h1>`)
+    document.write(`<h1>${person['age']}</h1>`)
+    document.write(`<h1>${person['height']}</h1>`)
+  </script>
+</body>
+
+</html>

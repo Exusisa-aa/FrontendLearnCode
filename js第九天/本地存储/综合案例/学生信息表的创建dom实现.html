@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box {
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid #000;
+    width: 900px;
+    padding-bottom: 80px;
+  }
+
+  .head {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  form {
+    text-align: center;
+    height: 50px;
+    margin-top: 20px;
+  }
+
+  input,
+  select {
+    height: 40px;
+  }
+
+  .total {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  table {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .submit {
+    background-color: #295bd8;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  tbody tr td:last-child a {
+    text-decoration: none;
+    color: white;
+    background-color: #f05e03;
+    display: inline-block;
+    width: 80px;
+  }
+</style>
+
+<body>
+  <div class="box">
+    <div class="head">学生就业统计表</div>
+    <form action="#">
+      <input type="text" placeholder="姓名">
+      <input type="text" placeholder="年龄">
+      <input type="text" placeholder="薪资">
+      性别：
+      <select name="性别" id="0">
+        <option value="男" selected="selected">男</option>
+        <option value="女">女</option>
+      </select>
+      城市：
+      <select name="城市" id="1">
+        <option value="北京" selected="selected">北京</option>
+        <option value="上海">上海</option>
+        <option value="广州">广州</option>
+        <option value="深圳">深圳</option>
+        <option value="杭州">杭州</option>
+      </select>
+      学历：
+      <select name="学历" id="2">
+        <option value="大专" selected="selected">大专</option>
+        <option value="本科">本科</option>
+        <option value="硕士">硕士</option>
+        <option value="博士">博士</option>
+      </select>
+      <input class="submit" type="submit" name="提交" id="">
+    </form>
+    <div class="total">共有数据0人</div>
+    <table border="1" cellspacing="0" cellpadding="10px">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>姓名</th>
+          <th>年龄</th>
+          <th>性别</th>
+          <th>学历</th>
+          <th>薪资</th>
+          <th>就业城市</th>
+          <th>录入时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  <script>
+
+
+    const name = document.querySelector('input[placeholder="姓名"]')
+    const age = document.querySelector('input[placeholder="年龄"]')
+    const salary = document.querySelector('input[placeholder="薪资"]')
+    const sex = document.querySelector('select[name="性别"]')
+    const city = document.querySelector('select[name="城市"]')
+    const education = document.querySelector('select[name="学历"]')
+
+
+    let students = new Array()
+    students = JSON.parse(localStorage.getItem('localStudents')) || []
+    let id = localStorage.getItem('id') || 0
+    read()
+
+
+
+    document.querySelector('form').addEventListener('submit', function (e) {
+      e.preventDefault()
+
+      if (name.value.trim() === '' || age.value.trim() === '' || salary.value.trim() === '') {
+        alert('请填写完整信息再提交')
+        return
+      }
+
+      const date = new Date()
+      id++
+      localStorage.setItem('id', id)
+      let student = {
+        id: id,
+        name: name.value,
+        age: age.value,
+        sex: sex.value,
+        salary: salary.value,
+        education: education.value,
+        city: city.value,
+        time: date.toLocaleString()
+      }
+      students.push(student)
+      localStorage.setItem('localStudents', JSON.stringify(students))
+
+      write()
+
+      this.reset()
+
+      console.log(students)
+    })
+
+    document.querySelector('table').addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        if (confirm('确定删除吗？')) {
+          e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode)
+          id--
+          localStorage.setItem('id', id)
+          document.querySelector('.total').innerHTML = `共有数据${students.length}人`
+          students.splice(e.target.parentNode.parentNode.children[0].innerHTML - 1, 1)
+          localStorage.setItem('localStudents', JSON.stringify(students))
+          reset()
+          console.log(students)
+        }
+      }
+    })
+
+    function reset() {
+      for (let i = 0; i < students.length; i++) {
+        students[i].id = i + 1
+        localStorage.setItem('localStudents', JSON.stringify(students))
+      }
+
+      for (let i = 0; i < students.length; i++) {
+        document.querySelector(`tbody tr:nth-child(${i + 1})`).children[0].innerHTML = students[i].id
+      }
+
+    }
+
+    function read() {
+      for (let i = 0; i < students.length; i++) {
+        const tr = document.createElement('tr')
+        const tdForID = document.createElement('td')
+        const tdForName = document.createElement('td')
+        const tdForAge = document.createElement('td')
+        const tdForSex = document.createElement('td')
+        const tdForSalary = document.createElement('td')
+        const tdForXueLi = document.createElement('td')
+        const tdForCity = document.createElement('td')
+        const tdForTime = document.createElement('td')
+        const tdForOperate = document.createElement('td')
+
+        tdForID.innerHTML = students[i].id
+        tr.appendChild(tdForID)
+
+        tdForName.innerHTML = students[i].name
+        tr.appendChild(tdForName)
+
+        tdForAge.innerHTML = students[i].age
+        tr.appendChild(tdForAge)
+
+        tdForSex.innerHTML = students[i].sex
+        tr.appendChild(tdForSex)
+
+        tdForXueLi.innerHTML = students[i].education
+        tr.appendChild(tdForXueLi)
+
+        tdForSalary.innerHTML = students[i].salary
+        tr.appendChild(tdForSalary)
+
+        tdForCity.innerHTML = students[i].city
+        tr.appendChild(tdForCity)
+
+        tdForTime.innerHTML = students[i].time
+        tr.appendChild(tdForTime)
+
+        tdForOperate.innerHTML = '<a href="javascript:;">删除</a>'
+        tr.appendChild(tdForOperate)
+
+        document.querySelector('tbody').appendChild(tr)
+
+        document.querySelector('.total').innerHTML = `共有数据${students.length}人`
+      }
+    }
+
+    function write() {
+      const tr = document.createElement('tr')
+      const tdForID = document.createElement('td')
+      const tdForName = document.createElement('td')
+      const tdForAge = document.createElement('td')
+      const tdForSex = document.createElement('td')
+      const tdForSalary = document.createElement('td')
+      const tdForXueLi = document.createElement('td')
+      const tdForCity = document.createElement('td')
+      const tdForTime = document.createElement('td')
+      const tdForOperate = document.createElement('td')
+
+      tdForID.innerHTML = localStorage.getItem('id')
+      tr.appendChild(tdForID)
+
+      tdForName.innerHTML = students[students.length - 1].name
+      tr.appendChild(tdForName)
+
+      tdForAge.innerHTML = students[students.length - 1].age
+      tr.appendChild(tdForAge)
+
+      tdForSex.innerHTML = students[students.length - 1].sex
+      tr.appendChild(tdForSex)
+
+      tdForXueLi.innerHTML = students[students.length - 1].education
+      tr.appendChild(tdForXueLi)
+
+      tdForSalary.innerHTML = students[students.length - 1].salary
+      tr.appendChild(tdForSalary)
+
+      tdForCity.innerHTML = students[students.length - 1].city
+      tr.appendChild(tdForCity)
+
+      tdForTime.innerHTML = students[students.length - 1].time
+      tr.appendChild(tdForTime)
+
+      tdForOperate.innerHTML = '<a href="javascript:;">删除</a>'
+      tr.appendChild(tdForOperate)
+
+      document.querySelector('tbody').appendChild(tr)
+
+      document.querySelector('.total').innerHTML = `共有数据${students.length}人`
+    }
+
+
+  </script>
+</body>
+
+</html>

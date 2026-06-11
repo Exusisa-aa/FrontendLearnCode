@@ -1,0 +1,98 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const webpack = require('webpack');
+
+const config = {
+  devServer: {
+    static: './dist',
+  },
+  entry: {
+    login: path.join(__dirname, 'src/login/login.js'),
+    content: path.join(__dirname, 'src/content/index.js'),
+    publish: path.join(__dirname, 'src/publish/index.js'),
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name]/index.js',
+    clean: true
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public/login.html'),
+      filename: path.join(__dirname, 'dist/login/index.html'),
+      chunks: ['login'],
+      useCDN: process.env.NODE_ENV === "production"
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public/content.html'),
+      filename: path.join(__dirname, 'dist/content/index.html'),
+      chunks: ['content'],
+      useCDN: process.env.NODE_ENV === "production"
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public/publish.html'),
+      filename: path.join(__dirname, 'dist/publish/index.html'),
+      chunks: ['publish'],
+      useCDN: process.env.NODE_ENV === "production"
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name]/index.css'
+    }),
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
+    })],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [process.env.NODE_ENV === "production" ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader'],
+      },
+      {
+        test: /\.less$/i,
+        use: [
+          // compiles Less to CSS
+          process.env.NODE_ENV === "production" ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader',
+          'less-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset',
+        generator: {
+          filename: 'assets/[hash][ext][query]'
+        }
+      },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      // 在 webpack@5 中，你可以使用 `...` 语法来扩展现有的 minimizer（即 `terser-webpack-plugin`），将下一行取消注释
+      `...`,
+      new CssMinimizerPlugin(),
+    ],
+  },
+  resolve: {
+    alias: {
+      '@': path.join(__dirname, 'src')
+    }
+  }
+}
+
+if (process.env.NODE_ENV === "development") {
+  config.devtool = 'inline-source-map'
+}
+
+if (process.env.NODE_ENV === "production") {
+  config.externals = {
+    'axios': 'axios',
+    'bootstrap': 'bootstrap',
+    'bootstrap-icons': 'bootstrap-icons',
+    'form-serialize': 'serialize',
+    '@wangeditor/editor': 'wangEditor'
+  }
+}
+
+module.exports = config
